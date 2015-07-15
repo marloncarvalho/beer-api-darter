@@ -1,0 +1,11 @@
+name: beer
+version: 0.0.1
+author: AlienLabZ Team (labz.alien@gmail.com)
+description: API for exposing beer data.
+homepage: https://github.com/marloncarvalho/beer-api
+environment:
+  sdk: '>=1.8.3 <2.0.0'
+dependencies:
+  collection: '>=1.1.1 <2.0.0'
+  darter:
+    path: /Users/marloncarvalho/git/darter/
