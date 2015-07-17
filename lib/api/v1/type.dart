@@ -1,16 +1,10 @@
-library beer.api.v1.beer;
+library beer.api.v1.type;
 
 import 'package:darter/darter.dart';
 import 'package:beer/model/beer.dart';
 
-@API(path: 'beers')
-class BeerAPI {
-
-  @GET(path: ':id/photo')
-  @MediaType(consume: MediaType.XML, produce: MediaType.XML)
-  String photo() {
-    return "photo";
-  }
+@API(path: 'types')
+class TypeAPI {
 
   @GET(path: ':id')
   Beer getById(Map pathParams) {
