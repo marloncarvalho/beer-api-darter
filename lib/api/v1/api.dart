@@ -12,5 +12,4 @@ class Base {
 
   @Include()
   TypeAPI type = new TypeAPI();
-
 }

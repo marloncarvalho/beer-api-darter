@@ -6,7 +6,6 @@ import 'package:beer/api/v1/interceptors.dart';
 
 main() {
   new DarterServer()
-//    ..addApi(new BeerAPI())
     ..addApi(new Base())
     ..addInterceptor(new Authentication())
     ..addInterceptor(new Cors())
