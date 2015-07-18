@@ -6,7 +6,7 @@ import 'package:darter/darter.dart';
 class Authentication {
 
   void intercept(Chain chain) {
-    String token = chain.request.headers["X-Token"];
+    String token = chain.request.headers["x-token"];
     if (token != "Test") {
       chain.abort(new Response()
         ..body = "{\"error\":\"Permission Denied\"}"

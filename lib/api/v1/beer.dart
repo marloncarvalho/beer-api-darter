@@ -6,10 +6,9 @@ import 'package:beer/model/beer.dart';
 @API(path: 'beers')
 class BeerAPI {
 
-  @GET(path: ':id/photo')
-  @MediaType(consume: MediaType.XML, produce: MediaType.XML)
-  String photo() {
-    return "photo";
+  @GET()
+  List<Beer> list() {
+    return Beer.all();
   }
 
   @GET(path: ':id')
