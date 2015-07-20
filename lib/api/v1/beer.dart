@@ -2,46 +2,35 @@ library beer.api.v1.beer;
 
 import 'package:darter/darter.dart';
 import 'package:beer/model/beer.dart';
+import 'dart:async';
 
 @API(path: 'beers')
 class BeerAPI {
 
   @GET()
   List<Beer> list() {
-    return Beer.all();
+    return [new Beer(id: 1, name: "Beer 1")];
   }
 
   @GET(path: ':id')
-  Beer getById(Map pathParams) {
-    return Beer.get(int.parse(pathParams['id']));
+  Future<Beer> getById(Parameters pathParams) async{
+    return new Beer(id: 1, name:'Beer 1');
   }
 
   @POST()
   Beer create(Beer beer) {
-    beer.save();
     return beer;
   }
 
   @DELETE(path: ':id')
-  void delete(Map pathParams) {
-    Beer.get(int.parse(pathParams['id'])).delete();
+  void delete(Parameters pathParams) {
   }
 
   @PUT(path: ':id')
-  Response put(Map pathParams, Beer beer) {
-    Response response = new Response();
-    Beer localBeer = Beer.get(int.parse(pathParams['id']));
-
-    if (localBeer == null) {
-      response.statusCode = 201;
-    } else {
-      response.statusCode = 200;
-    }
-
-    beer.save();
-    response.entity = beer;
-
-    return response;
+  Response put(Parameters pathParams, Beer beer) {
+    Response result = new Response(statusCode: 200);
+    result.entity = beer;
+    return result;
   }
 
 }

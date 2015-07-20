@@ -1,35 +1,15 @@
-library models.beer;
+library beer.models;
+
+class Type {
+  int id;
+  String name;
+  List<Beer> beers;
+}
 
 class Beer {
   int id;
   String name;
+  Type type;
 
-  static List<Beer> all() {
-    List<Beer> result = [];
-
-    result.add(new Beer()
-      ..id = 1
-      .. name = "Duvel");
-
-    result.add(new Beer()
-      ..id = 2
-      .. name = "Delirium Tremens");
-
-    return result;
-  }
-
-  static Beer get(int id) {
-    return new Beer()
-      ..id = id
-      ..name = "Beer with ID #${id}";
-  }
-
-  void save() {
-    this.id = 1000;
-  }
-
-  void delete() {
-
-  }
-
+  Beer({this.id, this.name, this.type});
 }

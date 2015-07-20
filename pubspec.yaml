@@ -7,7 +7,9 @@ environment:
   sdk: '>=1.8.3 <2.0.0'
 dependencies:
   collection: '>=1.1.1 <2.0.0'
-  darter: '>=0.0.1-beta <0.0.5'
   appengine: '>=0.2.1 <0.3.0'
-#  darter:
-#    path: /Users/marloncarvalho/git/darter/
+#  darter: '>=0.0.1-beta <0.0.5'
+  darter:
+    path: /Users/marloncarvalho/git/darter/
+  cryogen:
+    path: /Users/marloncarvalho/git/cryogen/
